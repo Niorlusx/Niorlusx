@@ -1,0 +1,4 @@
+<Response>
+    <Say>Welcome to Niorlusx AI Call Service.</Say>
+    <Record timeout="5" playBeep="true" />
+</Response>
