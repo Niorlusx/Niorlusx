@@ -14,7 +14,7 @@ This guide shows how to keep your dynamic IP address in sync with [DuckDNS](http
    mkdir ~/duckdns
    cd ~/duckdns
    cat <<'SCRIPT' > duck.sh
-   echo url="https://www.duckdns.org/update?domains=niorlusxai&token=66e571ed-536f-46fe-9d01-7573f9047916&ip=" | \
+   echo url="https://www.duckdns.org/update?domains=niorlusxai&token=<YOUR_TOKEN>&ip=" | \
      curl -k -o ~/duckdns/duck.log -K -
    SCRIPT
    chmod 700 duck.sh
