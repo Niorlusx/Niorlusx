@@ -24,6 +24,7 @@ Call logs are appended to `call_logs.txt`.
 - `docs/metrics_example.py` – example endpoint for real-time call metrics with a dashboard placeholder.
 - `docs/twilio_flex_sso.md` – how to configure your IdP for Twilio Flex SSO.
 - `docs/duckdns_cron.md` – configure a DuckDNS update script with cron.
+- `docs/termux_guide.md` - instructions for running the service in Termux.
 
 Repository layout:
 
