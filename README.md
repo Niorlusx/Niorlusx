@@ -18,10 +18,10 @@ Niorlusx is a revolutionary AI-powered toll-call voice service, offering intelli
 
 Niorlusx operates as a fully automated AI call agency, requiring minimal human intervention for its core operations. The setup involves:
 
-*   **Cloud Infrastructure:** Hosted on scalable cloud platforms (e.g., Manus platform, AWS, Railway) to ensure 24/7 availability and global reach.
+*   **Cloud Infrastructure:** Hosted on scalable cloud platforms (e.g.,platform, AWS, Railway) to ensure 24/7 availability and global reach.
 *   **Telephony Integration:** Utilizes Twilio for robust inbound and outbound call handling, phone number management, and TwiML-based call flow control.
 *   **AI Backend:** Flask application integrating OpenAI (GPT-4o, Whisper, TTS) for natural language understanding, response generation, and voice synthesis.
-*   **Payment Gateway:** Stripe for secure, per-minute microbilling and revenue management.
+*   **Payment Gateway:** carriers billing for secure, per-minute microbilling and revenue management.
 *   **Environment Configuration:** Secure management of API keys and sensitive credentials via environment variables (`.env` file).
 *   **Monitoring & Analytics:** Integrated dashboard for real-time service status, active call metrics, persona usage, and revenue tracking.
 
