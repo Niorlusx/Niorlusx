@@ -17,29 +17,30 @@ jobs:
       contents: write
       pull-requests: write
       issues: write
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      
-      - name: Install AI Agent
-        run: npm install -g @mistral/ai-automation-agent
-        
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
       - name: Auto-Review PR
         if: github.event_name == 'pull_request'
-        run: ai-agent pr-review
-        
+        run: npm run pr-review --if-present
+
       - name: Auto-Generate Docs
-        run: ai-agent generate-docs
-        
+        run: npm run generate-docs --if-present
+
       - name: Auto-Optimize Code
-        run: ai-agent optimize
-        
+        run: npm run optimize --if-present
+
       - name: Auto-Triage Issues
         if: github.event_name == 'issues'
-        run: ai-agent issue-triage
+        run: npm run issue-triage --if-present
