@@ -5,8 +5,8 @@ from tasks.index import Task
 
 def main():
     # Initialize the agent and task
-    agent = Agent()
-    task = Task()
+    agent = Agent(name="Niorlusx Agent")
+    task = Task(name="Default Task")
 
     # Run the task using the agent
     agent.run_task(task)

@@ -17,29 +17,25 @@ jobs:
       contents: write
       pull-requests: write
       issues: write
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          node-version: '20'
-      
-      - name: Install AI Agent
-        run: npm install -g @mistral/ai-automation-agent
-        
-      - name: Auto-Review PR
-        if: github.event_name == 'pull_request'
-        run: ai-agent pr-review
-        
-      - name: Auto-Generate Docs
-        run: ai-agent generate-docs
-        
-      - name: Auto-Optimize Code
-        run: ai-agent optimize
-        
-      - name: Auto-Triage Issues
-        if: github.event_name == 'issues'
-        run: ai-agent issue-triage
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8
+
+      - name: Lint call service
+        run: |
+          flake8 niorlusx_call_service/app.py --max-line-length=127 --exit-zero
+
+      - name: Lint ai-agents-project
+        run: |
+          flake8 ai-agents-project/src/ --max-line-length=127 --exit-zero
