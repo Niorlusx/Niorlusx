@@ -34,8 +34,8 @@ jobs:
 
       - name: Lint call service
         run: |
-          flake8 niorlusx_call_service/app.py --max-line-length=127 --exit-zero
+          flake8 niorlusx_call_service/app.py --max-line-length=127
 
       - name: Lint ai-agents-project
         run: |
-          flake8 ai-agents-project/src/ --max-line-length=127 --exit-zero
+          flake8 ai-agents-project/src/ --max-line-length=127

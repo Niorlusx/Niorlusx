@@ -72,6 +72,12 @@ def test_handle_speech_missing_call_sid(client):
     assert b'Missing call info' in resp.data
 
 
+def test_select_persona_no_call_sid(client):
+    resp = client.post('/select_persona', data={'Digits': '1'})
+    assert resp.status_code == 200
+    assert b'Luna' in resp.data
+
+
 def test_personas_dict_complete():
     assert set(PERSONAS.keys()) == {'1', '2', '3', '4', '5'}
     for key, persona in PERSONAS.items():
